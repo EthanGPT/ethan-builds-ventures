@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { FaXTwitter } from 'react-icons/fa6';
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -12,6 +13,12 @@ const Hero = () => {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       
+      {/* Animated Green Hue Overlays */}
+      <div className="absolute inset-0 opacity-60">
+        <div className="absolute inset-0 w-full h-2 bg-gradient-to-r from-transparent via-green-400 to-transparent animate-green-wave top-1/3 shadow-[0_0_20px_rgba(34,197,94,0.8)]" />
+        <div className="absolute inset-0 w-full h-1 bg-gradient-to-r from-transparent via-green-300 to-transparent animate-green-wave top-2/3 shadow-[0_0_15px_rgba(34,197,94,0.6)]" style={{animationDelay: '2s'}} />
+      </div>
+      
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
         <div className="mb-6">
@@ -20,7 +27,7 @@ const Hero = () => {
           </span>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight animate-[text-glow_4s_ease-in-out_infinite_alternate] drop-shadow-[0_0_20px_rgba(34,197,94,0.3)]">
           Ethan Hartwell
         </h1>
         
@@ -35,7 +42,7 @@ const Hero = () => {
         <div className="flex flex-wrap gap-4 justify-center mb-12">
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow animate-[button-glow_3s_ease-in-out_infinite_alternate] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 hover:-translate-y-1"
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View Projects
@@ -43,7 +50,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             variant="outline"
-            className="border-border hover:bg-muted"
+            className="border-border hover:bg-muted hover:shadow-[0_0_15px_rgba(34,197,94,0.3)] transition-all duration-300 hover:-translate-y-1"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Get in Touch
@@ -53,7 +60,7 @@ const Hero = () => {
         {/* Social Links */}
         <div className="flex gap-6 justify-center">
           <a 
-            href="https://github.com/ethanhartwell" 
+            href="https://github.com/EthanGPT" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
@@ -61,12 +68,20 @@ const Hero = () => {
             <Github size={24} />
           </a>
           <a 
-            href="https://linkedin.com/in/ethanhartwell" 
+            href="https://linkedin.com/in/ethan-hartwell" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
             <Linkedin size={24} />
+          </a>
+          <a 
+            href="https://x.com/EthanHartw74498"
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            <FaXTwitter size={24} />
           </a>
           <a 
             href="mailto:ethhartwell@gmail.com"
